@@ -6,6 +6,11 @@ module.exports = {
             fontFamily: {
                 sans: ['Inter var', ...defaultTheme.fontFamily.sans],
             },
+            boxShadow: {
+                '3xl': '0 60px 60px -15px rgba(0, 0, 0, 0.3)',
+                '4xl': '0 100px 100px -20px rgba(0, 0, 0, 0.25)',
+                '5xl': '0 100px 300px -20px rgba(0, 0, 0, 0.3)',
+            }
         },
     },
     variants: {

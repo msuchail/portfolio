@@ -1,3 +1,2 @@
-import './bootstrap';
-import tippy from 'tippy.js';
-import 'tippy.js/dist/tippy.css'; // optional for styling
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+window.Swal = Swal;

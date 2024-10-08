@@ -1,3 +1,15 @@
+@import '@sweetalert2/theme-dark/dark.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+    section {
+        @apply py-20;
+    }
+}
+

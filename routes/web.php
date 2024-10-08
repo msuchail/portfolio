@@ -13,4 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', \App\Livewire\Pages\LandingPage::class);
+Route::get('/', \App\Livewire\Pages\LandingPage::class)->name('landing-page');
