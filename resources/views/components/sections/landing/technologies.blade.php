@@ -1,5 +1,5 @@
 <section id="skills" class="bg:black md:py-0">
-    <div class="container mx-auto text-center flex flex-col justify-center min-h-screen gap-24 px-24 md:px-6">
+    <div class="container mx-auto text-center flex flex-col justify-center min-h-screen gap-24 md:px-24 px-6">
         <div class="flex flex-col gap-6">
             <h2 class="text-white text-4xl font-bold">Stack technique</h2>
             <p class="text-gray-200">Spécialisé dans la TALL Stack (Tailwind CSS, Alpine.js, Laravel, Livewire), je conçois des interfaces web modernes et dynamiques. Grâce à ces technologies, je développe des applications dynamiques avec une expérience alliant design responsive et performance optimale.</p>
