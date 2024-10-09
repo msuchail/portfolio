@@ -1,5 +1,5 @@
 <div class="flex flex-col items-stretch">
-    <x-ui.step />
+{{--    <x-ui.step />--}}
     <!-- Hero Section -->
     <x-sections.landing.hero />
 

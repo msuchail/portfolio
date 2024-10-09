@@ -3,9 +3,6 @@ services:
         build:
             context: ../
             dockerfile: docker/Dockerfile
-        ports:
-            - "80:80"
-            - "443:443"
     mysql:
         image: mysql
         environment:
@@ -13,5 +10,3 @@ services:
             MYSQL_DATABASE: laravel
             MYSQL_USER: sail
             MYSQL_PASSWORD: password
-        ports:
-            - "3306:3306"

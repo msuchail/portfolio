@@ -7,7 +7,7 @@
                 <h2 class="text-4xl font-bold mb-10">Prenons contact!</h2>
                 <div class="flex flex-col gap-10">
                     <p>
-                        Vous avez un projet en tête ?<br>Vous souhaitez en discuter ou simplement dire bonjour ?<br></br>N'hésitez pas à me contacter, je serai ravi de vous répondre.
+                        Vous avez un projet en tête et vous ne savez pas comment le concrétiser?<br><br>Vous souhaitez en discuter ou simplement dire bonjour ?<br></br>N'hésitez pas à me contacter.<br> je serai ravi de répondre à toutes vos questions!
                     </p>
                 </div>
 
@@ -129,7 +129,7 @@
             icon: 'success',
             confirmButtonText: 'Fermer'
         })
-        $wire.forname=''
+        $wire.firstname=''
         $wire.lastname=''
         $wire.company=''
         $wire.email=''

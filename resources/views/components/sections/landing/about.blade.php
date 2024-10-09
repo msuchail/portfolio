@@ -1,7 +1,7 @@
 <section id="about" class="pt-22 bg-black min-h-screen flex flex-col justify-center gap-12 px-4">
     <div class="container mx-auto text-center md:w-1/2 flex flex-col gap-4">
         <h2 class="text-white text-4xl font-bold">Qui suis-je?</h2>
-        <p class="text-gray-200 mx-auto">Je suis un développeur web freelance, agé de 25 ans, basé en région lyonnaise. Fort d'une solide expérience dans le domaine du numérique, je mets un point d'honneur à accompagner mes clients tout au long de leurs projets, en les écoutant et en proposant des solutions adaptées à leurs besoins. Mon objectif est de créer des collaborations basées sur la confiance et la transparence, afin d'apporter une véritable valeur ajoutée à chaque projet.</p>
+        <p class="text-gray-200 mx-auto">Je suis un développeur web freelance, âgé de 25 ans, basé en région lyonnaise. Fort d'une solide expérience dans le domaine du numérique, je mets un point d'honneur à accompagner mes clients tout au long de leurs projets, en les écoutant et en proposant des solutions adaptées à leurs besoins. Mon objectif est de créer des collaborations basées sur la confiance et la transparence, afin d'apporter une véritable valeur ajoutée à chaque projet. Avec un taux journalier avantageux et un bonus pour les nouveaux clients, mes préstations de développeur freelance sont accessibles à tous!</p>
     </div>
 {{--    <div class="container mx-auto text-center flex flex-col gap-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
@@ -20,7 +20,7 @@
         </div>
     </div>--}}
     <div class="text-center">
-        <x-ui.button link="#work">
+        <x-ui.button link="#skills">
             Stack technique
         </x-ui.button>
     </div>
