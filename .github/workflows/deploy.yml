@@ -10,7 +10,7 @@ jobs:
     name: push-to-ghcr
     # You may pin to the exact commit or the version.
     # uses: macbre/push-to-ghcr@91a23f5ca90410345e37d8252ae43b0b89942c6f
-    uses: .github/workflows/macbre/push-to-ghcr@v14
+    uses: macbre/push-to-ghcr@master
     with:
       # Your secrets.GITHUB_TOKEN
       github_token: ${{ secrets.PAT }}
