@@ -1,35 +1,44 @@
-name: deploy to prod
-env:
-  CONTAINER_NAME: portfolio
+name: publish
+
 on:
   push:
-    branches:
-      - master
+    branches: [ "master" ]
+
+env:
+  # Use docker.io for Docker Hub if empty
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.actor }}/msuchail:latest
+  CONTAINER_NAME: msuchail
 
 jobs:
-  deploy:
-    environment: prod
+  publish:
+    name: publish image
     runs-on: ubuntu-latest
+
     steps:
-      - name: SSH-Compose
-        # You may pin to the exact commit or the version.
-        # uses: matiasnu/github-action-ssh-docker-compose@7fb3aa789f898b63c3722e6beb2dafa1a70f0e22
-        uses: matiasnu/github-action-ssh-docker-compose@v2.0.3
-        with:
-          # Private SSH key used for logging into remote system.
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          # Remote host name.
-          ssh_host: ${{ secrets.SSH_HOST }}
-          # Remote SSH port.
-          # ssh_port: # default is 22
-          # Remote user name.
-          ssh_user: ${{ secrets.SSH_USER }}
-          # Prefix for docker compose containers.
-          docker_compose_prefix: docker
-          # Docker compose file to use
-          docker_compose_filename: docker-compose.yml
-          # Use docker stack instead of docker compose ("true" or "false").
-          # use_stack: # optional, default is false
-          # Execute docker compose-down ("true" or "false").
-          # docker_compose_down: # optional, default is false
-          
+      - uses: actions/checkout@v3
+      - name: Login
+        run: |
+          echo ${{ secrets.PAT }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+      - name: Build and Publish
+        run: |
+          docker build . --tag ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+
+  deploy:
+    needs: publish
+    name: deploy image
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: install ssh keys
+        # check this thread to understand why its needed:
+        # <https://stackoverflow.com/a/70447517>
+        run: |
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
+      - name: connect and pull
+        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && docker compose pull && docker compose up -d && docker exec ${{ env.CONTAINER_NAME }} php artisan migrate --force && exit"
+      - name: cleanup
+        run: rm -rf ~/.ssh
