@@ -20,6 +20,6 @@ jobs:
           # Image name, e.g. my-user-name/my-repo (will be lowercased)
           image_name: msuchail/portfolio
           # A path to the Dockerfile (if it's not in the repository's root directory)
-          dockerfile: docker/Dockerfile
+          dockerfile: docker/
               # A path to the context in which the build will happen, see https://docs.docker.com/engine/reference/commandline/build/
           context: .
