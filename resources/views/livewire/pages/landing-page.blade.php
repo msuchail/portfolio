@@ -1,16 +1,21 @@
-<div class="flex flex-col items-stretch">
+<div class="flex flex-col items-stretch text-center">
 {{--    <x-ui.step />--}}
     <!-- Hero Section -->
-    <x-sections.landing.hero />
+    <div class="bg-gradient-to-br from-black to-indigo-950">
+        <x-sections.landing.hero id="profile" />
+    </div>
 
     <!-- About Section -->
-    <x-sections.landing.about />
+    <div>
+        <x-sections.landing.about id="about" />
+    </div>
 
-
-    <div class="border-t border-indigo-600 w-1/2 text-white mx-auto"></div>
+    <x-ui.separator />
 
     <!-- Technologies Section -->
-    <x-sections.landing.technologies />
+    <div>
+        <x-sections.landing.technologies id="skills" />
+    </div>
 
 {{--
     <!-- Projets Section -->
@@ -18,5 +23,7 @@
 --}}
 
     <!-- Contact Section -->
-    <x-sections.landing.contact />
+    <div>
+        <x-sections.landing.contact id="contact" />
+    </div>
 </div>

@@ -1,15 +1,18 @@
-<section id="contact" x-data="contact" class="min-h-screen flex flex-col justify-center text-white">
-    <div class="max-w-screen-xl mx-auto px-4 md:px-8">
-        <div
-            class="max-w-lg mx-auto gap-12 justify-between lg:flex lg:max-w-none"
-        >
-            <div class="max-w-lg space-y-3">
-                <h2 class="text-4xl font-bold mb-10">Prenons contact!</h2>
-                <div class="flex flex-col gap-10">
-                    <p>
-                        Vous avez un projet en tête et vous ne savez pas comment le concrétiser?<br><br>Vous souhaitez en discuter ou simplement dire bonjour ?<br></br>N'hésitez pas à me contacter.<br> je serai ravi de répondre à toutes vos questions!
-                    </p>
-                </div>
+<x-ui.section :id="$id" x-data="contact" class="text-left">
+    <div class="max-w-lg mx-auto gap-12 justify-between lg:flex lg:max-w-none">
+        <div class="max-w-lg space-y-3">
+                <x-ui.title.h2>Prenons contact !</x-ui.title.h2>
+
+                <x-ui.paragraph>
+                    Vous avez un projet en tête et vous ne savez pas comment le concrétiser?
+                </x-ui.paragraph>
+                <x-ui.paragraph>
+                    Vous souhaitez en discuter ou simplement dire bonjour ?
+                </x-ui.paragraph>
+                <x-ui.paragraph>
+                    N'hésitez pas à me contacter.<br> Je serai ravi de répondre à toutes vos questions !
+                </x-ui.paragraph>
+
 
                 <div>
                     <ul class="mt-6 flex flex-wrap gap-x-10 gap-y-6 items-center">
@@ -28,7 +31,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="flex-1 sm:max-w-lg lg:max-w-md">
+        <div class="flex-1 sm:max-w-lg lg:max-w-md">
                 <form @submit.prevent class="space-y-5">
                     <div class="grid grid-cols-6 md:grid-cols-12 gap-4">
                         <div class="col-span-6">
@@ -88,7 +91,7 @@
                     </div>
                     <div>
                         <label for="phone" class="font-medium">
-                            Phone number
+                            Numéro de téléphone
                         </label>
                         <input
                             wire:model.live="phone"
@@ -117,9 +120,8 @@
                     </button>
                 </form>
             </div>
-        </div>
     </div>
-</section>
+</x-ui.section>
 @script
 <script>
     $wire.on('email-sent', () => {
