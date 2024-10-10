@@ -27,7 +27,7 @@ jobs:
           # Prefix for docker compose containers.
           docker_compose_prefix: portfolio
           # Docker compose file to use
-          docker_compose_filename: 'docker-compose.yml'
+          docker_compose_filename: 'portfolio/docker/docker-compose.yml'
           # Use docker stack instead of docker compose ("true" or "false").
           # use_stack: # optional, default is false
           # Execute docker compose-down ("true" or "false").
