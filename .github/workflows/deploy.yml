@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  deploy:
+  push:
     environment: prod
     runs-on: "ubuntu-20.04"
     steps:
@@ -19,18 +19,22 @@ jobs:
           dockerfile: ./docker/Dockerfile
           # Personal Access Token (PAT) used to authenticate with the GitHub Container Registry.
           github_token: ${{ secrets.PAT }}
-          
-      - name: Run SSH Commands
-        id: ssh
-        uses: arthurvanl/action-exec-ssh@v1
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: root
-          password: ${{ secrets.SSH_PASSWORD }}
-          commands: |
-            cd portfolio
-            docker compose pull
-            docker compose down
-            docker compose up -d
+      
+  pull:
+    environment: prod
+    runs-on: "ubuntu-20.04"
+    steps:
+    - name: Run SSH Commands
+      id: ssh
+      uses: arthurvanl/action-exec-ssh@v1
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: root
+        password: ${{ secrets.SSH_PASSWORD }}
+        commands: |
+          cd portfolio
+          docker compose pull
+          docker compose down
+          docker compose up -d
 
 
