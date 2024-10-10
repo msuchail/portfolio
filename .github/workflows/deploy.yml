@@ -22,6 +22,7 @@ jobs:
           github_token: ${{ secrets.PAT }}
       
   pull:
+    environment: prod
     needs: push
     name: deploy image
     runs-on: ubuntu-latest
