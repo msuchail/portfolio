@@ -19,16 +19,18 @@ jobs:
           dockerfile: ./docker/Dockerfile
           # Personal Access Token (PAT) used to authenticate with the GitHub Container Registry.
           github_token: ${{ secrets.PAT }}
-
-      - name: Run remote command via SSH
-        uses: D3rHase/ssh-command-action@latest
+          
+      - name: Run SSH Commands
+        id: ssh
+        uses: arthurvanl/action-exec-ssh@v1
         with:
           host: ${{ secrets.SSH_HOST }}
-          user: ${{ secrets.SSH_USER }}
-          private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          command: |
+          username: root
+          password: ${{ secrets.SSH_PASSWORD }}
+          commands: |
             cd portfolio
             docker compose pull
             docker compose down
             docker compose up -d
+
 
