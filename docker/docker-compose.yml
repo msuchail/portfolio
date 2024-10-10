@@ -3,7 +3,9 @@ services:
         container_name: portfolio
         env_file:
             - .env
-        image: ghcr.io/msuchail/portfolio
+        build:
+            context: .
+            dockerfile: Dockerfile
         networks:
             - default
             - caddy
