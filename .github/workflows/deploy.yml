@@ -12,6 +12,7 @@ env:
 
 jobs:
   publish:
+    environment: prod
     name: publish image
     runs-on: ubuntu-latest
 
@@ -26,6 +27,7 @@ jobs:
           docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
   deploy:
+    environment: prod
     needs: publish
     name: deploy image
     runs-on: ubuntu-latest
