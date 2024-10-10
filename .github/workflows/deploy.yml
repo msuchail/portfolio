@@ -6,19 +6,17 @@ on:
       - master
 
 jobs:
-  push-to-ghcr:
-    name: push-to-ghcr
-    # You may pin to the exact commit or the version.
-    # uses: macbre/push-to-ghcr@91a23f5ca90410345e37d8252ae43b0b89942c6f
-    uses: macbre/push-to-ghcr/.github/workflows/ci.yml@master
-    with:
-      # Your secrets.GITHUB_TOKEN
-      github_token: ${{ secrets.PAT }}
-      # Image name, e.g. my-user-name/my-repo (will be lowercased)
-      image_name: msuchail/portfolio
-      # A path to the Dockerfile (if it's not in the repository's root directory)
-      dockerfile: docker/Dockerfile
-      # A path to the context in which the build will happen, see https://docs.docker.com/engine/reference/commandline/build/
-      context: .
-      # Docker repository to push an image to, defaults to ghcr.io
-      repository: ghcr.io
+  build:
+    runs-on: debian
+    steps:
+      - name: push-to-ghcr
+        # You may pin to the exact commit or the version.
+        # uses: macbre/push-to-ghcr@91a23f5ca90410345e37d8252ae43b0b89942c6f
+        with:
+          # Your secrets.GITHUB_TOKEN
+          github_token: ${{ secrets.PAT }}
+          # Image name, e.g. my-user-name/my-repo (will be lowercased)
+          image_name: portfolio
+          # A path to the Dockerfile (if it's not in the repository's root directory)
+          dockerfile: docker/Dockerfile
+          
