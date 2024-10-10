@@ -6,6 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="description" content="Jeune développeur web fullstack en freelance, spécialisé en PHP - Laravel. Contactez-moi dès à présent pour discuter de votre projet.">
         <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+        <link rel="apple-touch-icon" href="{{ asset('favicon.ico') }}" />
         <link rel="canonical" href="https://x-mathias.dev">
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <title>{{ 'Développeur web freelance Laravel - Mathias SUCHAIL' }}@isset($tittle) - {{ $title }}@endisset</title>

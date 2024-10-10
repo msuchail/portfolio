@@ -36,7 +36,7 @@
                                 <svg class="text-indigo-400 fill-current w-7 h-7" viewBox="0 0 50 31" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)"><path fill-rule="evenodd" clip-rule="evenodd" d="M25 0c-6.667 0-10.833 3.382-12.5 10.146 2.5-3.382 5.417-4.65 8.75-3.805 1.902.482 3.261 1.882 4.766 3.432 2.45 2.524 5.288 5.445 11.484 5.445 6.667 0 10.833-3.382 12.5-10.145-2.5 3.382-5.417 4.65-8.75 3.804-1.902-.482-3.261-1.882-4.766-3.431C34.034 2.922 31.196 0 25 0ZM12.5 15.218C5.833 15.218 1.667 18.6 0 25.364c2.5-3.382 5.417-4.65 8.75-3.805 1.902.483 3.261 1.883 4.766 3.432 2.45 2.524 5.288 5.445 11.484 5.445 6.667 0 10.833-3.381 12.5-10.145-2.5 3.382-5.417 4.65-8.75 3.805-1.902-.483-3.261-1.883-4.766-3.432-2.45-2.524-5.288-5.446-11.484-5.446Z" fill="currentColor"/></g><defs><clipPath id="a"><rect width="50" height="31" fill="currentColor"/></clipPath></defs></svg>
                             </div>
 
-                            <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Tailwind CSS</h2>
+                            <h3 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Tailwind CSS</h3>
 
                             <p class="mt-4 text-sm leading-relaxed text-gray-500 dark:text-gray-200">
                                 Tailwind CSS is a popular utility-first CSS framework that makes it easy to style pages by applying pre-defined classes to HTML elements.
@@ -52,7 +52,7 @@
                                 <svg class="text-indigo-400 fill-current w-7 h-7" viewBox="0 0 55 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="m42.753 0 12.112 12.06-12.112 12.058L30.641 12.06 42.753 0Z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="m12.473 0 25.11 25H13.358L.36 12.06 12.473 0Z" fill="currentColor"/></svg>
                             </div>
 
-                            <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">AlpineJS</h2>
+                            <h3 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">AlpineJS</h3>
 
                             <p class="mt-4 text-sm leading-relaxed text-gray-500 dark:text-gray-200">
                                 AlpineJS is a lightweight JavaScript framework that allows you to add interactivity to your HTML using simple declarative syntax.
@@ -69,7 +69,7 @@
 
                             </div>
 
-                            <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laravel</h2>
+                            <h3 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laravel</h3>
 
                             <p class="mt-4 text-sm leading-relaxed text-gray-500 dark:text-gray-200">
                                 Laravel is a free and open-source PHP web framework that allows developers to build web applications quickly and easily.
@@ -85,7 +85,7 @@
                                 <svg class="text-indigo-400 translate-x-px translate-y-px fill-current w-7 h-7" viewBox="0 0 40 45" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M37.47 29.484c-.717 1.084-1.262 2.42-2.72 2.42-2.455 0-2.588-3.784-5.044-3.784-2.456 0-2.323 3.785-4.777 3.785-2.455 0-2.588-3.785-5.043-3.785-2.456 0-2.324 3.785-4.778 3.785-2.455 0-2.587-3.785-5.043-3.785s-2.323 3.785-4.778 3.785c-.771 0-1.313-.374-1.77-.887C1.76 27.962.75 24.38.75 20.55.75 9.34 9.41.25 20.095.25c10.683 0 19.344 9.089 19.344 20.3 0 3.206-.708 6.238-1.969 8.934Z" fill="currentColor"/><mask id="a-livewire" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="6" y="23" width="27" height="22"><path d="M12.37 27.48v8.408a2.732 2.732 0 0 1-5.465 0v-10.15c.51-.937 1.093-1.747 2.143-1.747 1.71 0 2.307 2.148 3.321 3.489Zm10.32.438v13.296a3.036 3.036 0 0 1-6.07 0V26.165c.57-1.102 1.16-2.174 2.368-2.174 1.912 0 2.433 2.687 3.703 3.927Zm9.715-.244v9.653a2.732 2.732 0 1 1-5.465 0V25.462c.476-.814 1.043-1.471 1.988-1.471 1.795 0 2.364 2.367 3.477 3.683Z" fill="white"/></mask><g mask="url(#a-livewire)"><path d="M12.37 27.48v8.408a2.732 2.732 0 0 1-5.465 0v-10.15c.51-.937 1.093-1.747 2.143-1.747 1.71 0 2.307 2.148 3.321 3.489Zm10.32.438v13.296a3.036 3.036 0 0 1-6.07 0V26.165c.57-1.102 1.16-2.174 2.368-2.174 1.912 0 2.433 2.687 3.703 3.927Zm9.715-.244v9.653a2.732 2.732 0 1 1-5.465 0V25.462c.476-.814 1.043-1.471 1.988-1.471 1.795 0 2.364 2.367 3.477 3.683Z" fill="currentColor"/></g><mask id="b-livewire" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="6" y="19" width="27" height="14"><path d="M12.37 30.057c-.485-.594-1.059-1.034-1.889-1.034-1.97 0-2.332 2.483-3.576 3.602v-10.71a2.732 2.732 0 1 1 5.464 0v8.142Zm10.32.191c-.516-.687-1.12-1.225-2.037-1.225-2.192 0-2.393 3.073-4.034 3.923V28.21a3.036 3.036 0 0 1 6.072 0v2.038Zm9.715-.531c-.42-.414-.92-.694-1.58-.694-2.124 0-2.38 2.884-3.884 3.837v-9.613a2.732 2.732 0 1 1 5.464 0v6.47Z" fill="white"/></mask><g mask="url(#b-livewire)"><path d="M12.37 30.057c-.485-.594-1.059-1.034-1.889-1.034-1.97 0-2.332 2.483-3.576 3.602v-10.71a2.732 2.732 0 1 1 5.464 0v8.142Zm10.32.191c-.516-.687-1.12-1.225-2.037-1.225-2.192 0-2.393 3.073-4.034 3.923V28.21a3.036 3.036 0 0 1 6.072 0v2.038Zm9.715-.531c-.42-.414-.92-.694-1.58-.694-2.124 0-2.38 2.884-3.884 3.837v-9.613a2.732 2.732 0 1 1 5.464 0v6.47Z" fill="black" fill-opacity="0.298514"/></g><path fill-rule="evenodd" clip-rule="evenodd" d="M37.47 29.484c-.717 1.084-1.262 2.42-2.72 2.42-2.455 0-2.588-3.784-5.044-3.784-2.456 0-2.323 3.785-4.777 3.785-2.455 0-2.588-3.785-5.043-3.785-2.456 0-2.324 3.785-4.778 3.785-2.455 0-2.587-3.785-5.043-3.785s-2.323 3.785-4.778 3.785c-.771 0-1.313-.374-1.77-.887C1.76 27.962.75 24.38.75 20.55.75 9.34 9.41.25 20.095.25c10.683 0 19.344 9.089 19.344 20.3 0 3.206-.708 6.238-1.969 8.934Z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M33.284 31.5c5.07-7.541 5.2-15.906.393-25.095a20.248 20.248 0 0 1 5.762 14.188c0 3.194-.734 6.214-2.04 8.9-.744 1.08-1.31 2.412-2.821 2.412-.517 0-.935-.156-1.294-.405Z" fill="black" fill-opacity="0.15"/><path fill-rule="evenodd" clip-rule="evenodd" d="M19.057 25.614c6.728 0 9.56-3.902 9.56-9.445 0-5.542-4.28-10.643-9.56-10.643s-9.56 5.101-9.56 10.643c0 5.543 2.833 9.445 9.56 9.445Z" fill="white"/><path d="M16.487 16.483c1.98 0 3.585-1.771 3.585-3.957 0-2.185-1.605-3.956-3.585-3.956s-3.585 1.771-3.585 3.956c0 2.186 1.605 3.957 3.585 3.957Z" fill="currentColor"/><path d="M15.89 13.44c.99 0 1.792-.818 1.792-1.827 0-1.008-.802-1.826-1.792-1.826s-1.793.818-1.793 1.826c0 1.009.803 1.827 1.793 1.827Z" fill="white"/></svg>
                             </div>
 
-                            <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Livewire</h2>
+                            <h3 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Livewire</h3>
 
                             <p class="mt-4 text-sm leading-relaxed text-gray-500 dark:text-gray-200">
                                 Livewire is a tool that simplifies the process of creating interactive and dynamic user interfaces using PHP and Laravel.
