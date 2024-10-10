@@ -32,7 +32,7 @@ jobs:
           # Remote user name.
           ssh_user: ${{ secrets.SSH_USER }}
           # Prefix for docker compose containers.
-          docker_compose_prefix: '/home/mathias/portfolio'
+          docker_compose_prefix: 'portfolio'
           # Docker compose file to use
           docker_compose_filename: 'docker-compose.yml'
           # Execute docker compose-down ("true" or "false").
