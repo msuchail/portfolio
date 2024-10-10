@@ -17,13 +17,13 @@ jobs:
         uses: matiasnu/github-action-ssh-docker-compose@v2.0.3
         with:
           # Private SSH key used for logging into remote system.
-          ssh_private_key: ${{ SSH_PRIVATE_KEY }}
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           # Remote host name.
-          ssh_host: ${{ SSH_HOST }}
+          ssh_host: ${{ secrets.SSH_HOST }}
           # Remote SSH port.
           # ssh_port: # default is 22
           # Remote user name.
-          ssh_user: ${{ SSH_USER }}
+          ssh_user: ${{ secrets.SSH_USER }}
           # Prefix for docker compose containers.
           docker_compose_prefix: docker
           # Docker compose file to use
