@@ -1,5 +1,6 @@
 name: deploy to prod
-
+env:
+  CONTAINER_NAME: portfolio
 on:
   push:
     branches:
@@ -21,20 +22,21 @@ jobs:
           github_token: ${{ secrets.PAT }}
       
   pull:
-    environment: prod
-    runs-on: "ubuntu-20.04"
+    needs: push
+    name: deploy image
+    runs-on: ubuntu-latest
+
     steps:
-    - name: Run SSH Commands
-      id: ssh
-      uses: arthurvanl/action-exec-ssh@v1
-      with:
-        host: ${{ secrets.SSH_HOST }}
-        username: root
-        password: ${{ secrets.SSH_PASSWORD }}
-        commands: |
-          cd portfolio
-          docker compose pull
-          docker compose down
-          docker compose up -d
+      - name: install ssh keys
+        # check this thread to understand why its needed:
+        # <https://stackoverflow.com/a/70447517>
+        run: |
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
+      - name: connect and pull
+        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ env.CONTAINER_NAME }} && docker compose pull && docker compose up -d && docker exec ${{ env.CONTAINER_NAME }} php artisan migrate --force && exit"
+      - name: cleanup
+        run: rm -rf ~/.ssh
 
 
