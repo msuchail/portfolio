@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: debian
+    runs-on: "ubuntu-20.04"
     steps:
       - name: push-to-ghcr
         # You may pin to the exact commit or the version.
