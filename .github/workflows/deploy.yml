@@ -36,5 +36,5 @@ jobs:
           # Docker compose file to use
           docker_compose_filename: 'docker-compose.yml'
           # Execute docker compose-down ("true" or "false").
-          docker_compose_down: true
+          docker_compose_down: false
 
