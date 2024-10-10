@@ -21,3 +21,5 @@ jobs:
           image_name: msuchail/portfolio
           # A path to the Dockerfile (if it's not in the repository's root directory)
           dockerfile: docker/Dockerfile
+              # A path to the context in which the build will happen, see https://docs.docker.com/engine/reference/commandline/build/
+          context: .
