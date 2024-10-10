@@ -7,37 +7,29 @@ on:
       - master
 
 jobs:
-  push:
+  deploy:
     environment: prod
-    runs-on: "ubuntu-20.04"
-    steps:
-      - name: Build Docker Image and Push to GHCR, Docker Hub, or AWS ECR
-    # You may pin to the exact commit or the version.
-    # uses: GlueOps/github-actions-build-push-containers@e131c8e380656eabbe5f6e3c817bf658dc7b3fe5
-        uses: GlueOps/github-actions-build-push-containers@v0.4.1
-        with:
-          # The Dockerfile filename
-          dockerfile: ./docker/Dockerfile
-          # Personal Access Token (PAT) used to authenticate with the GitHub Container Registry.
-          github_token: ${{ secrets.PAT }}
-      
-  pull:
-    environment: prod
-    needs: push
-    name: deploy image
     runs-on: ubuntu-latest
-
     steps:
-      - name: install ssh keys
-        # check this thread to understand why its needed:
-        # <https://stackoverflow.com/a/70447517>
-        run: |
-          install -m 600 -D /dev/null ~/.ssh/id_rsa
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
-      - name: connect and pull
-        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ env.CONTAINER_NAME }} && docker compose pull && docker compose up -d && docker exec ${{ env.CONTAINER_NAME }} php artisan migrate --force && exit"
-      - name: cleanup
-        run: rm -rf ~/.ssh
-
-
+      - name: SSH-Compose
+        # You may pin to the exact commit or the version.
+        # uses: matiasnu/github-action-ssh-docker-compose@7fb3aa789f898b63c3722e6beb2dafa1a70f0e22
+        uses: matiasnu/github-action-ssh-docker-compose@v2.0.3
+        with:
+          # Private SSH key used for logging into remote system.
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          # Remote host name.
+          ssh_host: ${{ secrets.SSH_HOST }}
+          # Remote SSH port.
+          # ssh_port: # default is 22
+          # Remote user name.
+          ssh_user: ${{ secrets.SSH_USER }}
+          # Prefix for docker compose containers.
+          docker_compose_prefix: docker
+          # Docker compose file to use
+          docker_compose_filename: docker-compose.yml
+          # Use docker stack instead of docker compose ("true" or "false").
+          # use_stack: # optional, default is false
+          # Execute docker compose-down ("true" or "false").
+          # docker_compose_down: # optional, default is false
+          
