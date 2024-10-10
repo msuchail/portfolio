@@ -25,7 +25,7 @@ jobs:
           # Remote user name.
           ssh_user: ${{ secrets.SSH_USER }}
           # Prefix for docker compose containers.
-          docker_compose_prefix: docker
+          docker_compose_prefix: portfolio/docker/
           # Docker compose file to use
           docker_compose_filename: docker-compose.yml
           # Use docker stack instead of docker compose ("true" or "false").
