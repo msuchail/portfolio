@@ -8,7 +8,7 @@ env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.actor }}/msuchail:latest
-  CONTAINER_NAME: msuchail
+  CONTAINER_NAME: portfolio
   WORK_DIR: portfolio
 
 jobs:
