@@ -18,6 +18,6 @@ jobs:
           # Your secrets.GITHUB_TOKEN
           github_token: ${{ secrets.PAT }}
           # Image name, e.g. my-user-name/my-repo (will be lowercased)
-          image_name: portfolio
+          image_name: msuchail/portfolio
           # A path to the Dockerfile (if it's not in the repository's root directory)
           dockerfile: docker/Dockerfile
