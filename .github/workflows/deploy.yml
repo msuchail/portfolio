@@ -1,25 +1,43 @@
 name: deploy to prod
-
+env:
+  CONTAINER_NAME: portfolio
 on:
   push:
     branches:
       - master
 
 jobs:
-  build:
+  push:
     environment: prod
     runs-on: "ubuntu-20.04"
     steps:
-      - name: push-to-ghcr
-        # You may pin to the exact commit or the version.
-        # uses: macbre/push-to-ghcr@91a23f5ca90410345e37d8252ae43b0b89942c6f
-        uses: macbre/push-to-ghcr@v14
+      - name: Build Docker Image and Push to GHCR, Docker Hub, or AWS ECR
+    # You may pin to the exact commit or the version.
+    # uses: GlueOps/github-actions-build-push-containers@e131c8e380656eabbe5f6e3c817bf658dc7b3fe5
+        uses: GlueOps/github-actions-build-push-containers@v0.4.1
         with:
-          # Your secrets.GITHUB_TOKEN
+          # The Dockerfile filename
+          dockerfile: ./docker/Dockerfile
+          # Personal Access Token (PAT) used to authenticate with the GitHub Container Registry.
           github_token: ${{ secrets.PAT }}
-          # Image name, e.g. my-user-name/my-repo (will be lowercased)
-          image_name: msuchail/portfolio
-          # A path to the Dockerfile (if it's not in the repository's root directory)
-          dockerfile: docker/Dockerfile
-              # A path to the context in which the build will happen, see https://docs.docker.com/engine/reference/commandline/build/
-          context: .
+      
+  pull:
+    environment: prod
+    needs: push
+    name: deploy image
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: install ssh keys
+        # check this thread to understand why its needed:
+        # <https://stackoverflow.com/a/70447517>
+        run: |
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
+      - name: connect and pull
+        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ env.CONTAINER_NAME }} && docker compose pull && docker compose up -d && docker exec ${{ env.CONTAINER_NAME }} php artisan migrate --force && exit"
+      - name: cleanup
+        run: rm -rf ~/.ssh
+
+
