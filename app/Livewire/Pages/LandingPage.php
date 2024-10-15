@@ -5,6 +5,7 @@ namespace App\Livewire\Pages;
 use App\Livewire\Auth\Passwords\Confirm;
 use App\Mail\Confirmation;
 use App\Mail\Contact;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
 use Livewire\Attributes\Validate;

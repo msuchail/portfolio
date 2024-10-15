@@ -1,16 +1,10 @@
 <x-ui.section :id="$id" x-data="contact" class="text-left">
     <div class="max-w-lg mx-auto gap-12 justify-between lg:flex lg:max-w-none">
         <div class="max-w-lg space-y-3">
-                <x-ui.title.h2>Prenons contact !</x-ui.title.h2>
+                <x-ui.title.h2>{{__('Prenons contact !')}}</x-ui.title.h2>
 
                 <x-ui.paragraph>
-                    Vous avez un projet en tête et vous ne savez pas comment le concrétiser?
-                </x-ui.paragraph>
-                <x-ui.paragraph>
-                    Vous souhaitez en discuter ou simplement dire bonjour ?
-                </x-ui.paragraph>
-                <x-ui.paragraph>
-                    N'hésitez pas à me contacter.<br> Je serai ravi de répondre à toutes vos questions !
+                    {!! __('content.contact_p') !!}
                 </x-ui.paragraph>
 
 
@@ -35,15 +29,15 @@
                 <form @submit.prevent class="space-y-5">
                     <div class="grid grid-cols-6 md:grid-cols-12 gap-4">
                         <div class="col-span-6">
-                            <label for="civility" class="font-medium"> Civilité</label>
+                            <label for="civility" class="font-medium"> {{__('Civilité')}}</label>
                             <select wire:model.live="civility" name="civility" class="w-full mt-2 px-3 py-2 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg {{ $errors->has('lastname') ? 'border-red-500' : '' }}">
-                                <option>Monsieur</option>
-                                <option value="Mme">Madame</option>
+                                <option>{{__('Monsieur')}}</option>
+                                <option value="Mme">{{__('Madame')}}</option>
                             </select>
                             @error('civility') <span class="absolute text-red-500">{{ $message }}</span> @enderror
                         </div>
                         <div class="col-span-6">
-                            <label for="lastname" class="font-medium"> Nom de famille</label>
+                            <label for="lastname" class="font-medium"> {{__('Nom de famille')}}</label>
                             <input
                                 wire:model.live="lastname"
                                 name="lastname"
@@ -56,7 +50,7 @@
                     </div>
                     <div class="grid grid-cols-6 md:grid-cols-12 gap-4">
                         <div class="col-span-6">
-                            <label for="firstname" class="font-medium"> Prénom</label>
+                            <label for="firstname" class="font-medium"> {{__('Prénom')}}</label>
                             <input
                                 wire:model.live="firstname"
                                 name="firstname"
@@ -67,7 +61,7 @@
                             @error('firstname') <span class="absolute text-red-500">{{ $message }}</span> @enderror
                         </div>
                         <div class="col-span-6">
-                            <label for="company" class="font-medium"> Entreprise </label>
+                            <label for="company" class="font-medium"> {{__('Entreprise')}} </label>
                             <input
                                 wire:model.live="company"
                                 name="company"
@@ -79,7 +73,7 @@
                         </div>
                     </div>
                     <div>
-                        <label for="email" class="font-medium"> Adresse mail </label>
+                        <label for="email" class="font-medium"> {{__('Adresse mail')}} </label>
                         <input
                             wire:model.live="email"
                             name="email"
@@ -91,7 +85,7 @@
                     </div>
                     <div>
                         <label for="phone" class="font-medium">
-                            Numéro de téléphone
+                            {{__('Numéro de téléphone')}}
                         </label>
                         <input
                             wire:model.live="phone"
@@ -103,11 +97,11 @@
                         @error('phone') <span class="absolute text-red-500">{{ $message }}</span> @enderror
                     </div>
                     <div>
-                        <label for="message" class="font-medium"> Message </label>
+                        <label for="message" class="font-medium"> {{__('Message')}} </label>
                         <textarea
                             wire:model.live="message"
                             name="message"
-                            placeholder="Bonjour, je m'appelle Pierre Dupont et je suis le fondateur de Dupont company.&#10;Je souhaiterais discuter avec vous de mon projet de création d'une application web."
+                            placeholder="{{__('Veuillez saisir votre message ici')}}"
                             class="w-full mt-2 h-36 px-3 py-2 resize-none appearance-none bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg {{ $errors->has('message') ? 'border-red-500' : '' }}"
                         ></textarea>
                         @error('message') <span class="absolute text-red-500">{{ $message }}</span> @enderror
@@ -116,7 +110,7 @@
                         wire:click.prevent="sendMessage"
                         class="w-full px-4 py-2 font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150"
                     >
-                        Envoyer
+                        {{__('Envoyer')}}
                     </button>
                 </form>
             </div>
