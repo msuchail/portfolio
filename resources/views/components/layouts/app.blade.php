@@ -46,7 +46,7 @@
         Alpine.data('step', () => ({
             stepsItems: [
                 {
-                    name: '{{__('Profile')}}',
+                    name: '{{__('Profil')}}',
                     id: 'profile'
                 },
                 {
