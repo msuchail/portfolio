@@ -8,10 +8,12 @@ services:
             dockerfile: docker/Dockerfile
         networks:
             - default
-            - caddy
+#            - caddy
         restart: unless-stopped
         depends_on:
             - mysql
+        ports:
+            -   80:8080
 
     mysql:
         env_file:
@@ -20,10 +22,7 @@ services:
         restart: unless-stopped
         networks:
             - default
-        volumes:
-            - ./data:/var/lib/mysql
 
-networks:
-    default:
-    caddy:
-        external: true
+#networks:
+#    caddy:
+#        external: true
